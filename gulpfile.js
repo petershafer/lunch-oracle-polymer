@@ -154,6 +154,15 @@ gulp.task('fonts', function() {
     }));
 });
 
+// Copy data to dist
+gulp.task('data', function() {
+  return gulp.src(['app/data/**'])
+    .pipe(gulp.dest(dist('data')))
+    .pipe($.size({
+      title: 'data'
+    }));
+});
+
 // Scan your HTML for assets & optimize them
 gulp.task('html', function() {
   return optimizeHtmlTask(
@@ -271,7 +280,7 @@ gulp.task('default', ['clean'], function(cb) {
   // Uncomment 'cache-config' if you are going to use service workers.
   runSequence(
     ['ensureFiles', 'copy', 'styles'],
-    ['images', 'fonts', 'html'],
+    ['images', 'fonts', 'data', 'html'],
     'vulcanize', // 'cache-config',
     cb);
 });
