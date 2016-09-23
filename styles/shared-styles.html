@@ -1,0 +1,56 @@
+<link rel="import" href="../bower_components/polymer/polymer.html"><link rel="import" href="../bower_components/paper-styles/typography.html"><dom-module id="shared-styles"><template><style>
+      .page-title {
+        @apply(--paper-font-display2);
+      }
+
+      .app-menu {
+        --paper-menu-selected-item: {
+          color: #fff;
+          background: var(--light-primary-color);
+        }
+      }
+
+      paper-menu a > *, paper-menu paper-item > *, paper-menu paper-icon-item > * {
+        pointer-events: none;
+      }
+
+      @media (max-width: 600px) {
+        .page-title {
+          font-size: 24px!important;
+        }
+      }
+
+      simple-menu,
+      simple-menubar {
+        display: inline-block;
+        width: 100%;
+      }
+      simple-menu a {
+        display: block;
+      }
+      simple-menubar a,
+      simple-menu a {
+        padding: 15px 20px;
+        color: var(--primary-text-color);
+        text-decoration: none;
+      }
+      simple-menu a[disabled],
+      simple-menubar a[disabled] {
+        color: var(--google-grey-300);
+      }
+      .horizontal-section {
+        padding: 0;
+        margin-bottom: 20px;
+      }
+      .row {
+        height: 120px;
+      }
+
+      .flex-horizontal {
+        @apply(--layout-horizontal);
+      }
+      .flexchild {
+        @apply(--layout-flex);
+      }
+
+    </style></template></dom-module>
